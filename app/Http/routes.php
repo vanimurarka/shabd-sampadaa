@@ -11,11 +11,13 @@
 |
 */
 
-use App\Models\Word;
+use App\Models\Importer;
 
 $app->get('/', function () use($app) {
     // return $app->version();
     echo "hi";
-    // $words = Word::all();
+    $words = Importer::importWords("a",1);
     // var_dump($words);
 });
+
+
