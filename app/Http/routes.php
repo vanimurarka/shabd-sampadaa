@@ -11,6 +11,11 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
+use App\Models\Word;
+
+$app->get('/', function () use($app) {
+    // return $app->version();
+    echo "hi";
+    // $words = Word::all();
+    // var_dump($words);
 });
