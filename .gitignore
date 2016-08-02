@@ -23,3 +23,5 @@ $RECYCLE.BIN/
 # From Laravel/Lumen
 /vendor
 .env
+*.sublime-project
+ss.sublime-workspace
