@@ -13,9 +13,28 @@ final class Importer
 
 	public static function importWords($wordFilename,$pos)
 	{
-		$file = fopen("C:\\vani\Dropbox\www\shabd-sampadaa\HindiWN_1_4\database\idxadverb_txt","r");
-		echo fgets($file);
-		echo fgets($file);
+		$file = fopen($wordFilename,"r");
+		while (!feof($file))
+		{
+			$line = fgets($file);
+			$wordEnd = strpos($line, " ");
+			echo substr($line,0,$wordEnd);
+			echo "<br/>";
+			$remainingLine = substr($line, $wordEnd);
+			echo $remainingLine."<br/>";
+			$numbers = explode(" ", trim($remainingLine));
+			// echo $numbers[1];
+			$senseCount = (int)$numbers[2+(int)$numbers[1]];
+			echo($senseCount."<br/>");
+			$synsetNumbersAsString = "";
+			$synsetStart = 3+$numbers[1];
+			echo($synsetStart."<br/>");
+			for ($i=$synsetStart; $i < $synsetStart+$senseCount; $i++) { 
+				$synsetNumbersAsString .= $numbers[$i]." ";
+			}
+			echo($synsetNumbersAsString."<br/>");
+		}
+		// echo fgets($file);
 		fclose($file);
 	}
 }

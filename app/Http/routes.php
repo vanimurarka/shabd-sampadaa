@@ -15,9 +15,9 @@ use App\Models\Importer;
 
 $app->get('/', function () use($app) {
     // return $app->version();
-    echo "hi";
-    $words = Importer::importWords("a",1);
-    // var_dump($words);
+    $adverbFile = "C:\\vani\Dropbox\www\shabd-sampadaa\HindiWN_1_4\database\idxadverb_txt";
+    $adverbPartOfSpeech = 4;
+    $words = Importer::importWords($adverbFile,$adverbPartOfSpeech);
 });
 
 
