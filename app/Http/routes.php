@@ -13,11 +13,21 @@
 
 use App\Models\Importer;
 
-$app->get('/', function () use($app) {
+$app->get('/import', function () use($app) {
     // return $app->version();
-    $adverbFile = "C:\\vani\Dropbox\www\shabd-sampadaa\HindiWN_1_4\database\idxadverb_txt";
-    $adverbPartOfSpeech = 4;
-    $words = Importer::importWords($adverbFile,$adverbPartOfSpeech);
+    $wordFile = "C:\\vani\Dropbox\www\shabd-sampadaa\HindiWN_1_4\database\idxadjective-without-numberwords_txt";
+    $wordPartOfSpeech = 2;
+    $lineStart = 1;
+    $lineEnd = 1000;
+    $words = Importer::importWords($wordFile,$wordPartOfSpeech);
+});
+
+$app->get('/', function () use($app) {
+    <form method="GET" action="http://manaskriti.com/geet-gatiroop/login-submit" accept-charset="UTF-8">
+    From Line: <input name="lineFrom" type="text"><br/>
+    To Line: <input name="lineTo" type="text"><br/>
+	<input class="submit" type="submit" value="Import">
+	</form>
 });
 
 

@@ -15,7 +15,7 @@ final class Importer
 
 	public static function importWords($wordFilename,$pos)
 	{
-		set_time_limit(60*5);
+		set_time_limit(60*10);
 		$file = fopen($wordFilename,"r");
 		while (!feof($file))
 		{
