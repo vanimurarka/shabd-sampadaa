@@ -12,22 +12,32 @@
 */
 
 use App\Models\Importer;
+use Illuminate\Support\Facades\Input;
 
-$app->get('/import', function () use($app) {
+$app->get('/import', ['as'=>'import', function () use($app) {
     // return $app->version();
     $wordFile = "C:\\vani\Dropbox\www\shabd-sampadaa\HindiWN_1_4\database\idxadjective-without-numberwords_txt";
     $wordPartOfSpeech = 2;
-    $lineStart = 1;
-    $lineEnd = 1000;
-    $words = Importer::importWords($wordFile,$wordPartOfSpeech);
-});
+    $lineStart = Input::get('lineFrom');
+    $lineEnd = Input::get('lineTo');
+    // echo $lineStart.$lineEnd;
+    echo("start:".$lineStart." end:".$lineEnd."<br/><br/>");
+    $words = Importer::importWords($wordFile,$wordPartOfSpeech,$lineStart,$lineEnd);
+    echo "<br/><br/>";
+    echo '<form method="GET" action="'.route('import').'">';
+    echo 'From Line: <input name="lineFrom" type="text" value="'.($lineEnd+1).'"><br/>';
+    echo 'To Line: <input name="lineTo" type="text" value="'.($lineEnd+1+2000).'"><br/>';
+    echo '<input class="submit" type="submit" value="Import">';
+    echo '</form>';
+}]);
 
 $app->get('/', function () use($app) {
-    <form method="GET" action="http://manaskriti.com/geet-gatiroop/login-submit" accept-charset="UTF-8">
-    From Line: <input name="lineFrom" type="text"><br/>
-    To Line: <input name="lineTo" type="text"><br/>
-	<input class="submit" type="submit" value="Import">
-	</form>
+
+    echo '<form method="GET" action="'.route('import').'">';
+    echo 'From Line: <input name="lineFrom" type="text"><br/>';
+    echo 'To Line: <input name="lineTo" type="text"><br/>';
+	echo '<input class="submit" type="submit" value="Import">';
+	echo '</form>';
 });
 
 
