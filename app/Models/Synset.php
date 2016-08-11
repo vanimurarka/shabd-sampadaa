@@ -1,0 +1,31 @@
+<?php
+
+# app/Models/Word.php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Models\DeletedSynset;
+
+final class Synset extends Model  
+{
+	protected $table = 'ssp_synsets';
+	protected $primaryKey = "synsetID";
+
+	public function Backup()
+	{
+		$deletedSynset = new DeletedSynset;
+		$deletedSynset->synsetID = $this->synsetID;
+		$deletedSynset->words = $this->words;
+		$deletedSynset->sense = $this->sense;
+		$deletedSynset->save();
+	}
+
+	public static function getSynsets($ids)
+	{
+
+		$synsets = Synset::whereIn('synsetID',explode(',',$ids))
+					->get();
+		return $synsets;
+	}
+}

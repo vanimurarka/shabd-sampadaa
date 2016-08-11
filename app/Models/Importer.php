@@ -7,6 +7,7 @@ namespace App\Models;
 // use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Word;
+use App\Models\Synset;
 
 final class Importer
 {
@@ -28,20 +29,20 @@ final class Importer
 			{
 				$linecounter++;
 				if (($linecounter>=$start) && ($linecounter<=$end))
-					self::importLine($line,$pos);
+					self::importWordLine($line,$pos);
 				if ($linecounter>$end)
 					break;
 			}
 			else
 			{
-				self::importLine($line,$pos);
+				self::importWordLine($line,$pos);
 			}
 		}
 		// echo fgets($file);
 		fclose($file);
 	}
 
-	private static function importLine($line,$pos)
+	private static function importWordLine($line,$pos)
 	{
 		$wordEnd = strpos($line, " ");
 		$word = substr($line,0,$wordEnd);
@@ -67,5 +68,53 @@ final class Importer
 		$dbWord->pos = $pos;
 		$dbWord->synsets = $synsetNumbersAsString;
 		$dbWord->save();
+	}
+
+	private static function importSynsetLine($line)
+	{
+		$lineParts = explode(" | ", trim($line));
+		$lineSubParts = explode(" ", $lineParts[0]);
+		$synsetID = (int)$lineSubParts[0];
+		echo($synsetID."<br/>");
+		$synsetWords = $lineSubParts[3];
+		echo($synsetWords."<br/>");
+
+		$synset = new Synset;
+		$synset->synsetID = $synsetID;
+		$synset->words = $synsetWords;
+		if (count($lineParts)>1)
+		{
+			echo($lineParts[1]."<br/>");
+			$synset->sense = $lineParts[1];
+		}
+		$synset->save();
+	}
+
+	public static function importSynsets($filename,$start=0,$end=0)
+	{
+		set_time_limit(60*10);
+		$file = fopen($filename,"r");
+		$linecounter = 0;
+		$somelines = false;
+		if ($start > 0)
+			$somelines = true;
+		while (!feof($file))
+		{
+			$line = fgets($file);
+			if ($somelines)
+			{
+				$linecounter++;
+				if (($linecounter>=$start) && ($linecounter<=$end))
+					self::importSynsetLine($line);
+				if ($linecounter>$end)
+					break;
+			}
+			else
+			{
+				self::importSynsetLine($line);
+			}
+		}
+		// echo fgets($file);
+		fclose($file);
 	}
 }
