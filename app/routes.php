@@ -87,23 +87,24 @@ Route::get('/', ['as' => 'search', function ()
     echo '<input class="submit" type="submit" value="Search">';
     echo '</form>';
 
-    var_dump($word);
+    echo $word;
     if ($word != NULL)
     {
         $utf = urlencode($word);
-        var_dump($utf);
-        var_dump(urldecode($utf));
         $url = "http://localhost/shabd-sampadaa/public/api/word?word=".$utf;
-        var_dump($url);
-        echo "<br/>";
+        echo "<br/><br/>";
         $output = file_get_contents($url);
-        echo "<br/>output: ";
-        var_dump($output);
-        echo "<br/>";
         $str = preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function ($match) {
             return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE');
         }, $output);
-        var_dump($str);
+        $str = str_replace([":","_"], [", "," "], $str);
+        $receivedData = json_decode($output);
+        foreach ($receivedData->synsets as $synset)
+        {
+            // echo "ID: ".$synset->synsetID."<br/>";
+            echo str_replace([":","_"], [", "," "], $synset->words)."<br/>";
+            echo $synset->sense."<br/><br/>";
+        }
     }
 
     // $words = Word::findWord($word);
@@ -126,17 +127,12 @@ Route::get('/api/word', ['as' => 'api-search', function ()
     $word = Input::get('word');
 
     $words = Word::findWord($word);
-    // if (count($words) > 0)
-    // {
-    //     $synsets = Synset::getSynsets($words[0]->synsets);
-    //     if (count($synsets)>0)
-    //     {
-    //         foreach ($synsets as $synset) {
-    //             echo "ID: ".$synset->synsetID."<br/>";
-    //             echo "words: ".str_replace([":","_"], [", "," "], $synset->words)."<br/>";
-    //             echo "sense: ".$synset->sense."<br/><br/>";
-    //         }
-    //     }
-    // }
-    return response()->json($words);
+    $data = [];
+    $data['word']=$words;
+    if (count($words) > 0)
+    {
+        $synsets = Synset::getSynsets($words[0]->synsets);
+        $data['synsets'] = $synsets;
+    }
+    return Response::json($data);
 }]);

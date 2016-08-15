@@ -18,6 +18,7 @@ class Synset extends Eloquent
 	{
 
 		$synsets = Synset::whereIn('synsetID',explode(',',$ids))
+					->select('synsetID','words','sense')
 					->get();
 		return $synsets;
 	}

@@ -3,15 +3,13 @@
 class Word extends Eloquent
 {
 	protected $table = 'ssp_words';
-	// protected $primaryKey = "PRIMARY";
 
 	public static function findWord($word)
 	{
-		// \DB::enableQueryLog();
 
 		$words = Word::where('word','=',$word)
+					->select('word','pos','synsets')
 					->get();
-		// dd(\DB::getQueryLog());
 		return $words;
 	}
 
