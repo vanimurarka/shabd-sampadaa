@@ -1,13 +1,6 @@
 <?php
 
-# app/Models/Word.php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-use App\Models\DeletedSynset;
-
-final class Synset extends Model  
+class Synset extends Eloquent
 {
 	protected $table = 'ssp_synsets';
 	protected $primaryKey = "synsetID";

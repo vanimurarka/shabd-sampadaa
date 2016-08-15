@@ -1,15 +1,6 @@
 <?php
 
-# app/Models/Word.php
-
-namespace App\Models;
-
-// use Illuminate\Database\Eloquent\Model;
-
-use App\Models\Word;
-use App\Models\Synset;
-
-final class Importer
+class Importer
 {
 	// protected $table = 'ssp_words';
 	// protected $primaryKey = "PRIMARY";

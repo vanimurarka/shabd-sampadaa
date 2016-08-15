@@ -1,12 +1,6 @@
 <?php
 
-# app/Models/Word.php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-final class Word extends Model  
+class Word extends Eloquent
 {
 	protected $table = 'ssp_words';
 	// protected $primaryKey = "PRIMARY";
