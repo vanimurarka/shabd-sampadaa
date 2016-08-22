@@ -20,6 +20,9 @@ class Synset extends Eloquent
 		$synsets = Synset::whereIn('synsetID',explode(',',$ids))
 					->select('synsetID','words','sense')
 					->get();
+		foreach ($synsets as $synset) {
+			$synset->words = str_replace([":","_"], [", "," "], $synset->words);
+		}
 		return $synsets;
 	}
 }

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"json",
+				"json_decode"
+			],
+			[
+				"ec",
+				"echo"
+			],
+			[
 				"ech",
 				"echo	echo \"…\""
 			],
@@ -62,10 +70,6 @@
 			[
 				"is",
 				"is_array"
-			],
-			[
-				"ec",
-				"echo	echo \"…\""
 			],
 			[
 				"arr",
@@ -510,37 +514,33 @@
 			[
 				"d",
 				"display"
-			],
-			[
-				"men",
-				"menu-items"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/Http/routes.php",
+			"file": "app/config/shabd-sampadaa.php",
 			"settings":
 			{
-				"buffer_size": 4714,
+				"buffer_size": 284,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/routes.php",
+			"file": "app/routes.php",
 			"settings":
 			{
-				"buffer_size": 4677,
+				"buffer_size": 4568,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/config/database.php",
+			"file": "app/models/Synset.php",
 			"settings":
 			{
-				"buffer_size": 3319,
-				"line_ending": "Unix"
+				"buffer_size": 628,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -595,17 +595,39 @@
 	[
 		"/C/vani/Dropbox/www/shabd-sampadaa",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/Http",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/Models",
-		"/C/vani/Dropbox/www/shabd-sampadaa/database",
-		"/C/vani/Dropbox/www/shabd-sampadaa/HindiWN_1_4",
-		"/C/vani/Dropbox/www/shabd-sampadaa/HindiWN_1_4/database"
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/config",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models"
 	],
 	"file_history":
 	[
+		"/C/Users/vanimurarka/Desktop/shabd-sampadaa.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/shabd-sampadaa.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/routes.php",
+		"/C/Users/vanimurarka/Desktop/k-code/database.php",
+		"/C/Users/vanimurarka/Desktop/database.php",
+		"/C/Users/vanimurarka/Downloads/ssp_words-tabel_2016-08-16.sql",
+		"/C/Users/vanimurarka/Desktop/k-code/index.php",
+		"/C/Users/vanimurarka/Desktop/index.php",
+		"/C/Users/vanimurarka/Desktop/k-code/paths.php",
+		"/C/Users/vanimurarka/Desktop/paths.php",
+		"/C/Users/vanimurarka/Desktop/k-code/start.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Synset.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Word.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/database.php",
+		"/C/vani/Dropbox/www/kaavyaalaya/app/config/database.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/DeletedSynset.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Importer.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/.gitignore",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/app.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/models/Word.php",
+		"/C/vani/Dropbox/www/kaavyaalaya/app/models/NewPost.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/config/app.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/composer.json",
+		"/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/routes.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/config/database.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/Http/routes.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/public/index.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/Models/Word.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/Http/routes.php",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/controllers/SectionController.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/bootstrap/app.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/Models/Synset.php",
@@ -623,7 +645,6 @@
 		"/C/vani/Dropbox/www/shabd-sampadaa/HindiWN_1_4/database/xadjective_txt",
 		"/C/vani/Dropbox/www/shabd-sampadaa/HindiWN_1_4/database/index_txt",
 		"/C/vani/Dropbox/www/shabd-sampadaa/HindiWN_1_4/database/idxverb_txt",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/models/NewPost.php",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/lang/en/basic.php",
 		"/C/vani/Dropbox/www/kaavyaalaya/public/less/k-hindi.less",
 		"/C/vani/Dropbox/www/kaavyaalaya/public/less/k-section-hi.less",
@@ -706,31 +727,7 @@
 		"/C/Users/vanimurarka/Downloads/kshitij (4).php",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/views/templates/poembase.blade.php",
 		"/C/Users/vanimurarka/Desktop/kyonki",
-		"/C/Users/vanimurarka/Desktop/app.php",
-		"/C/Users/vanimurarka/Downloads/k_posts-tabel_2016-07-12.sql",
-		"/C/vani/Dropbox/www/kaavyaalaya/.gitignore",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/views/sub-views/custompagination.blade.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/config/app.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/views/404-page.blade.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/views/home-en.blade.php",
-		"/C/Users/vanimurarka/Downloads/kshitij (2).php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/database/migrations/2016_06_22_111824_delete_posts_author_cols.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/public/random.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/views/translated-poem-page.blade.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/public/.htaccess",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/models/Post.php",
-		"/C/Users/vanimurarka/Desktop/index.html",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/database/migrations/2016_06_21_042924_add_people_about.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/database/migrations/2016_06_17_104007_create_people.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/database/migrations/2016_06_17_113406_add_posts_people_ids.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/storage/logs/laravel-2016-06-14.log",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/start/global.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/filters.php",
-		"/C/Users/vanimurarka/Downloads/shabdanjali/shabdanjali.dict.dz",
-		"/C/Users/vanimurarka/Downloads/shabdanjali/shabdanjali.idx",
-		"/C/Users/vanimurarka/Downloads/MithunKhaataa96.sql",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/database/migrations/2016_06_14_074857_drop_content_cols_from_post.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/public/less/k-page.less"
+		"/C/Users/vanimurarka/Desktop/app.php"
 	],
 	"find":
 	{
@@ -898,24 +895,53 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/routes.php",
+					"file": "app/config/shabd-sampadaa.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4714,
+						"buffer_size": 284,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								504,
-								4714
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 72.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4568,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3606,
+								3656
 							]
 						],
 						"settings":
@@ -925,55 +951,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3079.0,
+						"translation.y": 2079.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4677,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4677,
-								4677
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2775.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/config/database.php",
+					"file": "app/models/Synset.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3319,
+						"buffer_size": 628,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1762,
-								1767
+								600,
+								600
 							]
 						],
 						"settings":
@@ -982,10 +980,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1248.0,
+						"translation.y": 287.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1040,24 +1038,32 @@
 		"selected_items":
 		[
 			[
+				"synse",
+				"app\\models\\Synset.php"
+			],
+			[
+				"routes",
+				"app\\routes.php"
+			],
+			[
+				"sha",
+				"app\\config\\shabd-sampadaa.php"
+			],
+			[
+				"data",
+				"app\\config\\database.php"
+			],
+			[
+				"app",
+				"app\\config\\app.php"
+			],
+			[
 				"ind",
 				"public\\index.php"
 			],
 			[
-				"app",
-				"bootstrap\\app.php"
-			],
-			[
-				"synse",
-				"app\\Models\\Synset.php"
-			],
-			[
 				"word",
 				"app\\Models\\Word.php"
-			],
-			[
-				"routes",
-				"app\\Http\\routes.php"
 			],
 			[
 				"rout",
@@ -1408,10 +1414,6 @@
 				"app\\config\\cache.php"
 			],
 			[
-				"data",
-				"app\\config\\database.php"
-			],
-			[
 				"meri",
 				"app\\storage\\poems-prepared\\meri_kavita.shtml"
 			],
@@ -1546,10 +1548,6 @@
 			[
 				"emailno",
 				"kshitij-website\\app\\views\\emails\\comment-notification.blade.php"
-			],
-			[
-				"comment-no",
-				"kshitij-website\\app\\views\\emails\\comment-notification.blade.php"
 			]
 		],
 		"width": 0.0
@@ -1579,7 +1577,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 193.0,
 	"status_bar_visible": true,
 	"template_settings":

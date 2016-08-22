@@ -91,7 +91,7 @@ Route::get('/', ['as' => 'search', function ()
     if ($word != NULL)
     {
         $utf = urlencode($word);
-        $url = "http://localhost/shabd-sampadaa/public/api/word?word=".$utf;
+        $url = Config::get('shabd-sampadaa.api-base-url')."word?word=".$utf;
         echo "<br/><br/>";
         $output = file_get_contents($url);
         $str = preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function ($match) {
