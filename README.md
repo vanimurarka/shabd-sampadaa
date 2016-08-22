@@ -1,5 +1,5 @@
-Shabd Sampadaa
-==============
+Shabd Sampadaa शब्द सम्पदा
+========================
 
 This is a descendant of the [Hindi Wordnet](http://www.cfilt.iitb.ac.in/wordnet/webhwn/) project of Centre for Indian Language Technology, IIT Mumbai.
 Hindi Wordnet is in Java. Shabd Sampadaa converts it to a PHP MySQL application and exposes a basic word search API.
