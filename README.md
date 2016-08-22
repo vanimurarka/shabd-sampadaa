@@ -4,7 +4,7 @@ Shabd Sampadaa
 This is a descendant of the [Hindi Wordnet](http://www.cfilt.iitb.ac.in/wordnet/webhwn/) project of Centre for Indian Language Technology, IIT Mumbai.
 Hindi Wordnet is in Java. Shabd Sampadaa converts it to a PHP MySQL application and exposes a basic word search API.
 
-Shabd Sampadaa is available under the GNU GPL v2 license.
+Shabd Sampadaa is available under the GNU GPL v3 license.
 
 To speed up development the PHP framework Laravel 4.2 has been used. Lumen would be quite sufficient too actually.
 
