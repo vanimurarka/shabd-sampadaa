@@ -33,49 +33,45 @@ Route::get('/import', ['as'=>'import', function () use($app) {
     echo '</form>';
 }]);
 
-// $app->get('/', function () use($app) {
 
-
-// });
-
-Route::get('/show-synset', ['as' => 'show-synset', function ()
-{
-    $which = Input::get('which');
-    $synset = Synset::find($which);
-    if (is_object($synset))
-    {
-        // $action = Input::get('action');
-        // if ($action == "delete")
-        // {
-        //     echo "Deleted<br/>";
-        //     echo "ID: ".$synset->synsetID."<br/>";
-        //     echo "words: ".$synset->words."<br/>";
-        //     echo "sense: ".$synset->sense."<br/><br/>";
-        //     $synset->Backup();
-        //     $synset->delete();
-        // }
-        // else
-        // {
-            echo "ID: ".$synset->synsetID."<br/>";
-            echo "words: ".$synset->words."<br/>";
-            echo "sense: ".$synset->sense."<br/>";
-            // echo '<form method="GET" action="'.route('show-synset').'">';
-            // echo '<input name="action" type="hidden" value="delete">';
-            // echo '<input name="which" type="hidden" value="'.$which.'">';
-            // echo '<input class="submit" type="submit" value="Delete">';
-            // echo '</form>';
-        // }
-    }
-    else
-    {
-        echo "Synset for ID ".$which." not found.<br/>";
-    }
-    echo '<form method="GET" action="'.route('show-synset').'">';
-    echo '<input name="which" type="hidden" value="'.($which+1).'">';
-    echo '<input class="submit" type="submit" value="Next '.($which+1).'">';
-    echo '</form>';
+// Route::get('/show-synset', ['as' => 'show-synset', function ()
+// {
+//     $which = Input::get('which');
+//     $synset = Synset::find($which);
+//     if (is_object($synset))
+//     {
+//         // $action = Input::get('action');
+//         // if ($action == "delete")
+//         // {
+//         //     echo "Deleted<br/>";
+//         //     echo "ID: ".$synset->synsetID."<br/>";
+//         //     echo "words: ".$synset->words."<br/>";
+//         //     echo "sense: ".$synset->sense."<br/><br/>";
+//         //     $synset->Backup();
+//         //     $synset->delete();
+//         // }
+//         // else
+//         // {
+//             echo "ID: ".$synset->synsetID."<br/>";
+//             echo "words: ".$synset->words."<br/>";
+//             echo "sense: ".$synset->sense."<br/>";
+//             // echo '<form method="GET" action="'.route('show-synset').'">';
+//             // echo '<input name="action" type="hidden" value="delete">';
+//             // echo '<input name="which" type="hidden" value="'.$which.'">';
+//             // echo '<input class="submit" type="submit" value="Delete">';
+//             // echo '</form>';
+//         // }
+//     }
+//     else
+//     {
+//         echo "Synset for ID ".$which." not found.<br/>";
+//     }
+//     echo '<form method="GET" action="'.route('show-synset').'">';
+//     echo '<input name="which" type="hidden" value="'.($which+1).'">';
+//     echo '<input class="submit" type="submit" value="Next '.($which+1).'">';
+//     echo '</form>';
     
-}]);
+// }]);
 
 
 
