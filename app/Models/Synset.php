@@ -2,7 +2,7 @@
 
 class Synset extends Eloquent
 {
-	protected $table = 'ssp_synsets';
+	protected $table = 'synsets';
 	protected $primaryKey = "synsetID";
 
 	public function Backup()

@@ -519,30 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/config/shabd-sampadaa.php",
-			"settings":
-			{
-				"buffer_size": 284,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/routes.php",
-			"settings":
-			{
-				"buffer_size": 4568,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/Synset.php",
-			"settings":
-			{
-				"buffer_size": 628,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -595,14 +571,26 @@
 	[
 		"/C/vani/Dropbox/www/shabd-sampadaa",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/config",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/models"
 	],
 	"file_history":
 	[
-		"/C/Users/vanimurarka/Desktop/shabd-sampadaa.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_08_30_093953_add_word_id.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_08_30_095809_add_word_id_now.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/database.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Word.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/DeletedSynset.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Synset.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_08_30_105058_add_word_language.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_08_30_112241_create_users.php",
+		"/C/vani/Dropbox/www/geet-gatiroop-website/app/database/migrations/2016_05_24_041455_user_poem_id_primary.php",
+		"/C/vani/Dropbox/www/geet-gatiroop-website/app/database/migrations/2016_05_24_040501_user_poem_indexes.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/shabd-sampadaa.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/routes.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/app.php",
+		"/C/Users/vanimurarka/Desktop/shabd-sampadaa.php",
 		"/C/Users/vanimurarka/Desktop/k-code/database.php",
 		"/C/Users/vanimurarka/Desktop/database.php",
 		"/C/Users/vanimurarka/Downloads/ssp_words-tabel_2016-08-16.sql",
@@ -611,14 +599,9 @@
 		"/C/Users/vanimurarka/Desktop/k-code/paths.php",
 		"/C/Users/vanimurarka/Desktop/paths.php",
 		"/C/Users/vanimurarka/Desktop/k-code/start.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Synset.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Word.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/database.php",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/config/database.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/DeletedSynset.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Importer.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/.gitignore",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/app.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/models/Word.php",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/models/NewPost.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa-laravel/app/config/app.php",
@@ -721,13 +704,7 @@
 		"/C/vani/Dropbox/www/kaavyaalaya/public/css/k-index-hi.css",
 		"/C/vani/Dropbox/www/kaavyaalaya/public/less/k-index-hi.less",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/views/pratidhwani.blade.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/lang/hi/basic.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/views/kaavya-setu.blade.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/views/sub-views/advertisement.blade.php",
-		"/C/Users/vanimurarka/Downloads/kshitij (4).php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/views/templates/poembase.blade.php",
-		"/C/Users/vanimurarka/Desktop/kyonki",
-		"/C/Users/vanimurarka/Desktop/app.php"
+		"/C/vani/Dropbox/www/kaavyaalaya/app/lang/hi/basic.php"
 	],
 	"find":
 	{
@@ -895,97 +872,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/config/shabd-sampadaa.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 284,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								277,
-								277
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 72.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4568,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3606,
-								3656
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2079.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/Synset.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 628,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								600,
-								600
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 287.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1038,6 +926,14 @@
 		"selected_items":
 		[
 			[
+				"data",
+				"app\\config\\database.php"
+			],
+			[
+				"app",
+				"app\\config\\app.php"
+			],
+			[
 				"synse",
 				"app\\models\\Synset.php"
 			],
@@ -1048,14 +944,6 @@
 			[
 				"sha",
 				"app\\config\\shabd-sampadaa.php"
-			],
-			[
-				"data",
-				"app\\config\\database.php"
-			],
-			[
-				"app",
-				"app\\config\\app.php"
 			],
 			[
 				"ind",

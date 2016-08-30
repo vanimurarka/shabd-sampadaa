@@ -4,7 +4,7 @@
 
 class DeletedSynset extends Eloquent
 {
-	protected $table = 'ssp_synsets_deleted';
+	protected $table = 'synsets_deleted';
 	protected $primaryKey = "synsetID";
 	
 }

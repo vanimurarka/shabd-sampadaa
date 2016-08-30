@@ -2,7 +2,7 @@
 
 class Word extends Eloquent
 {
-	protected $table = 'ssp_words';
+	protected $table = 'words';
 
 	public static function findWord($word)
 	{
