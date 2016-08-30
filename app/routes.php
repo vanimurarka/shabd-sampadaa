@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
 Route::get('/import', ['as'=>'import', function () use($app) {
     // return $app->version();
     $filename = "C:\\vani\Dropbox\www\shabd-sampadaa\HindiWN_1_4\database\data_txt";
@@ -132,3 +127,13 @@ Route::get('/api/word', ['as' => 'api-search', function ()
     }
     return Response::json($data);
 }]);
+
+Route::get('/test', ['as' => 'secsearch', function ()
+{
+        $url = Config::get('shabd-sampadaa.api-base-url')."secureword";
+        echo "<br/><br/>";
+        $output = file_get_contents($url);
+        var_dump($output);
+}]);
+
+Route::get('/api/secureword', 'DBEnhancer@get');
