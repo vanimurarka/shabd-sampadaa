@@ -72,6 +72,10 @@ Route::get('/import', ['as'=>'import', function () use($app) {
 
 Route::get('/', ['as' => 'search', function ()
 {
+    echo "<h1>Shabd Sampadaa शब्द सम्पदा</h1>";
+    if (Auth::check())
+        echo "Welcome editing user<br/><br/>";
+
     $word = Input::get('word');
     echo '<form method="GET" action="'.route('search').'">';
     echo 'Word: <input name="word" type="text" value="'.$word.'">';
@@ -132,8 +136,18 @@ Route::get('/test', ['as' => 'secsearch', function ()
 {
         $url = Config::get('shabd-sampadaa.api-base-url')."secureword";
         echo "<br/><br/>";
-        $output = file_get_contents($url);
+        $context = stream_context_create(array(
+            'http' => array(
+                'header'  => "X-Authorization: b33a86e0eb9efa4d06e56bfe5d5f305bf6b4a35e")
+        ));
+        $output = file_get_contents($url, false, $context);
         var_dump($output);
 }]);
+
+Route::get('/login', function()
+{
+    return View::make('login');
+});
+Route::post('/login-submit','UserController@login');
 
 Route::get('/api/secureword', 'DBEnhancer@get');
