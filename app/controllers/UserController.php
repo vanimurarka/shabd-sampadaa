@@ -20,6 +20,6 @@ class UserController extends BaseController {
     {
         Auth::logout();
         // var_dump(Auth::check());
-        return Redirect::route('index');
+        return Redirect::to('/');
     }
 }
