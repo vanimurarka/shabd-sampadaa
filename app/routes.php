@@ -11,6 +11,15 @@
 |
 */
 
+// Artisan::call('migrate', [
+//          '--force' => true
+//          ]);
+
+// Artisan::call('migrate', [
+//          '--package' => "chrisbjr/api-guard"
+//          ]);
+    // migrate --package="chrisbjr/api-guard"
+
 Route::get('/', ['as' => 'search', 'uses' => 'WebInterfaceController@showIndex']);
 
 Route::get('/login', function()
