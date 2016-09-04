@@ -19,6 +19,28 @@
 		else
 			$(id).css( "background-color", "white" );
 	}
+	function getSelectedWords()
+	{
+		words = '';
+		$('.word').each(function(index) {
+		    color = hexc($(this).css('background-color'));
+		    if (color=="#ff0000")
+		    	words += $(this).text() + ",";
+		    // console.log(index + ": " + $( this ).text());
+		});
+		console.log(words);
+		return words;
+	}
+	function markUrdu()
+	{
+		//get selected words
+		words = getSelectedWords();
+		console.log(words);
+		//call api
+		$("#selected-words").val(words);
+		$("#set-urdu-form").submit();
+		console.log('form submitted');
+	}
 </script>
 </head>
 <body>
@@ -43,13 +65,16 @@ Word: <input name="word" type="text" value="{{$word}}">
 				$words = explode(', ', $synset->words);
 			?>
 			@foreach ($words as $synsetWord)
-				<div style="display:inline-block;min-width:100px;background-color:white" id="word{{$wordid}}" onclick="selectword('{{'#word'.$wordid++}}');">{{$synsetWord}}</div>
+				<div style="display:inline-block;min-width:100px;background-color:white" id="word{{$wordid}}" class="word" onclick="selectword('{{'#word'.$wordid++}}');">{{$synsetWord}}</div>
 			@endforeach
 			<br/>
 			{{$synset->sense}}
 			<br/><br/>
 		@endforeach
-		<input class="submit" type="button" value="Mark Selected Words as Urdu">
+		<form method="GET" action="{{route('set-urdu')}}" id="set-urdu-form">
+		<input name="words" id="selected-words" type="hidden">
+		<input class="submit" type="button" value="Mark Selected Words as Urdu" onclick="markUrdu();">
+		</form>
 	@else
 		@foreach ($synsets as $synset)
 			 {{$synset->words}}<br/>

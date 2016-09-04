@@ -18,4 +18,11 @@ class DBEnhancer extends ApiGuardController
 
         //return $this->response->withCollection($books, new BookTransformer);
     }
+
+    public function setUrdu()
+    {
+		$words = Input::get('words');
+		$result = Word::setLanguage($words,'ur');
+		return $result;
+    }
 }

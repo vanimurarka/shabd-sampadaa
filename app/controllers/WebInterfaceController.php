@@ -1,5 +1,7 @@
 <?php
 
+use Chrisbjr\ApiGuard\Models\ApiKey;
+
 class WebInterfaceController extends BaseController {
 
 	public function showIndex()
@@ -22,4 +24,23 @@ class WebInterfaceController extends BaseController {
                    array('word' => $word,'synsets'=>$synsets))->render();
 	}
 
+	// mark words as urdu
+	public function setUrdu()
+	{
+		$words = Input::get('words');
+		if ($words != NULL)
+	    {
+	    	$utf = urlencode($words);
+	        $url = Config::get('shabd-sampadaa.api-base-url')."set-urdu?words=".$utf;
+	        $key = ApiKey::where('user_id', '=', Auth::user()->userid)->first();
+	        $key = $key->key;
+	        // var_dump($key);
+	        $context = stream_context_create(array(
+	            'http' => array(
+	                'header'  => "X-Authorization: ".$key)
+	        ));
+	        $output = file_get_contents($url, false, $context);
+	        var_dump($output);
+	    }
+	}
 }

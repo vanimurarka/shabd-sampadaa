@@ -5,7 +5,11 @@
 		[
 			[
 				"syn",
-				"synsets"
+				"synset"
+			],
+			[
+				"exp",
+				"explode"
 			],
 			[
 				"json",
@@ -510,10 +514,6 @@
 			[
 				"bread",
 				"breadcrumb-items"
-			],
-			[
-				"d",
-				"display"
 			]
 		]
 	},
@@ -547,7 +547,7 @@
 			"file": "app/views/home.blade.php",
 			"settings":
 			{
-				"buffer_size": 484,
+				"buffer_size": 2069,
 				"line_ending": "Windows"
 			}
 		}
@@ -1004,23 +1004,24 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 484,
+						"buffer_size": 2069,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								314,
-								314
+								844,
+								844
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 339.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

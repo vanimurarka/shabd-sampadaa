@@ -13,5 +13,17 @@ class Word extends Eloquent
 		return $words;
 	}
 
+	// set the language [hi,ur,en] for the given words
+	public static function setLanguage($words,$language)
+	{
+		try {
+			DB::table('words')
+			->whereIn('word',explode(',', $words))
+			->update(array('language'=>$language));
+			return 1;	
+		} catch (Exception $e) {
+			return 0;
+		}
+	}
 
 }
