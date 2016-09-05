@@ -16,11 +16,25 @@ class Synset extends Eloquent
 
 	public static function getSynsets($ids)
 	{
-
+		$wordsArray = '';
 		$synsets = Synset::whereIn('synsetID',explode(',',$ids))
 					->select('synsetID','words','sense')
 					->get();
 		foreach ($synsets as $synset) {
+			if ($synset->join_row_created != 1) // join row not created
+			{
+				$wordsArray = explode(":", $synset->words);
+				$wordids = DB::table('words')->whereIn('word',$wordsArray)->lists('id');
+				foreach ($wordids as $wordid )
+				{
+					$synsetWord = new SynsetWord;
+					$synsetWord->synsetid = $synset->synsetID;
+					$synsetWord->wordid = $wordid;
+					$synsetWord->save();
+				}
+				$synset->join_row_created = 1;
+				$synset->save();
+			}
 			$synset->words = str_replace([":","_"], [", "," "], $synset->words);
 		}
 		return $synsets;
