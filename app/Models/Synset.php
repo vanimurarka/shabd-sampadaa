@@ -18,9 +18,10 @@ class Synset extends Eloquent
 	{
 		$wordsArray = '';
 		$synsets = Synset::whereIn('synsetID',explode(',',$ids))
-					->select('synsetID','words','sense')
+					->select('synsetID','words','sense','join_row_created')
 					->get();
 		foreach ($synsets as $synset) {
+			// var_dump($synset->join_row_created);
 			if ($synset->join_row_created != 1) // join row not created
 			{
 				$wordsArray = explode(":", $synset->words);
