@@ -74,7 +74,7 @@ Route::get('admin/set-urdu', ['as' => 'set-urdu', 'uses' => 'WebInterfaceControl
 Route::get('/api/word', ['as' => 'api-search', function ()
 {
     $word = Input::get('word');
-
+    // return mb_strpos($word, "ज़");
     $words = Word::findWord($word);
     $data = [];
     $data['word']=$words;
@@ -82,6 +82,23 @@ Route::get('/api/word', ['as' => 'api-search', function ()
     {
         $synsets = Synset::getSynsets($words[0]->synsets);
         $data['synsets'] = $synsets;
+    }
+    else
+    {
+        // return "in else";
+        // return mb_substr($word,0,1);
+        // return mb_strpos($word,'ज़');
+        if (mb_strpos($word,'ज़') >= 0)
+        {
+            $word = str_replace("ज़", "ज़", $word);
+            // return $word;
+            $words = Word::findWord($word);
+            if (count($words) > 0)
+            {
+                $synsets = Synset::getSynsets($words[0]->synsets);
+                $data['synsets'] = $synsets;
+            }
+        }
     }
     return Response::json($data);
 }]);

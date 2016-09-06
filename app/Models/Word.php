@@ -6,7 +6,6 @@ class Word extends Eloquent
 
 	public static function findWord($word)
 	{
-
 		$words = Word::where('word','=',$word)
 					->select('word','pos','synsets')
 					->get();
