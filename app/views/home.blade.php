@@ -1,5 +1,9 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>शब्द सम्पदा: Shabd Sampadaa: Hindi Thesaurus</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script type="text/javascript">
 	function hexc(colorval) {
@@ -77,9 +81,15 @@ Word: <input name="word" type="text" value="{{$word}}">
 		</form>
 	@else
 		@foreach ($synsets as $synset)
-			 {{$synset->words}}<br/>
-	         {{$synset->sense}}
-	         <br/><br/>
+			<?php
+				$words = '';
+				$words = explode(', ', $synset->words);
+			?>
+			@foreach ($words as $synsetWord)
+				<div style="display:inline-block;min-width:100px;background-color:white" class="word">{{$synsetWord}}</div>
+			@endforeach
+	        <div>{{$synset->sense}}<br/><br/></div>
+	        
 	    @endforeach
     @endif
 @endif
