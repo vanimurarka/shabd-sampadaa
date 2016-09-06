@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"joi",
+				"join_row_created"
+			],
+			[
+				"words",
+				"wordsArray"
+			],
+			[
+				"synset",
+				"synsetID"
+			],
+			[
 				"word",
 				"wordid"
 			],
@@ -502,44 +514,24 @@
 			[
 				"tex",
 				"text-align"
-			],
-			[
-				"border-r",
-				"border-right"
-			],
-			[
-				"med",
-				"medium-side-margin"
-			],
-			[
-				"ce",
-				"center-links"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/database/migrations/2016_09_04_143527_add_synset_words.php",
+			"file": "app/models/Synset.php",
 			"settings":
 			{
-				"buffer_size": 690,
-				"line_ending": "Unix"
+				"buffer_size": 1151,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/database/migrations/2016_09_04_144137_add_synset_flag.php",
+			"file": "app/controllers/WebInterfaceController.php",
 			"settings":
 			{
-				"buffer_size": 687,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/database/migrations/2016_08_30_105058_add_word_language.php",
-			"settings":
-			{
-				"buffer_size": 519,
+				"buffer_size": 1472,
 				"line_ending": "Unix"
 			}
 		}
@@ -595,28 +587,28 @@
 	[
 		"/C/vani/Dropbox/www/shabd-sampadaa",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/database",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/storage",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/views"
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models"
 	],
 	"file_history":
 	[
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/SynsetWord.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Word.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/app.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/routes.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Synset.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_09_04_143527_add_synset_words.php",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_09_04_144137_add_synset_flag.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/controllers/DBEnhancer.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/controllers/UserController.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/controllers/WebInterfaceController.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/database.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/start/global.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/views/home.blade.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Word.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/Synset.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/vendor/chrisbjr/api-guard/src/Chrisbjr/ApiGuard/Models/ApiKey.php",
 		"/C/Users/vanimurarka/Desktop/database.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/storage/logs/laravel-2016-09-04.log",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/models/User.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/filters.php",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/config/app.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/composer.json",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_08_30_093953_add_word_id.php",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app/database/migrations/2016_08_30_095809_add_word_id_now.php",
@@ -726,10 +718,7 @@
 		"/C/vani/Dropbox/www/kaavyaalaya/app/lang/en/about-us.php",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/views/roman-hindi.blade.php",
 		"/C/vani/Dropbox/www/kaavyaalaya/app/views/contact-us.blade.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/public/less/k-english.less",
-		"/C/vani/Dropbox/www/kaavyaalaya/vendor/nikic/php-parser/lib/PHPParser/Node/Scalar/TraitConst.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/database/migrations/2016_07_20_030440_add_post_content_english.php",
-		"/C/vani/Dropbox/www/kaavyaalaya/app/controllers/HomeController.php"
+		"/C/vani/Dropbox/www/kaavyaalaya/public/less/k-english.less"
 	],
 	"find":
 	{
@@ -897,24 +886,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/database/migrations/2016_09_04_143527_add_synset_words.php",
+					"file": "app/models/Synset.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 690,
+						"buffer_size": 1151,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								511,
-								511
+								481,
+								481
 							]
 						],
 						"settings":
@@ -923,56 +912,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 420.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/database/migrations/2016_09_04_144137_add_synset_flag.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 687,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								359,
-								359
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 285.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/database/migrations/2016_08_30_105058_add_word_language.php",
-					"semi_transient": true,
+					"buffer": 1,
+					"file": "app/controllers/WebInterfaceController.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 519,
+						"buffer_size": 1472,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								512,
-								418
+								819,
+								819
 							]
 						],
 						"settings":
@@ -981,10 +941,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 312.0,
+						"translation.y": 96.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1039,6 +999,26 @@
 		"selected_items":
 		[
 			[
+				"webint",
+				"app\\controllers\\WebInterfaceController.php"
+			],
+			[
+				"syns",
+				"app\\models\\Synset.php"
+			],
+			[
+				"app",
+				"app\\config\\app.php"
+			],
+			[
+				"rout",
+				"app\\routes.php"
+			],
+			[
+				"syn",
+				"app\\models\\Synset.php"
+			],
+			[
 				"api",
 				"vendor\\chrisbjr\\api-guard\\src\\Chrisbjr\\ApiGuard\\Models\\ApiKey.php"
 			],
@@ -1055,16 +1035,8 @@
 				"app\\start\\global.php"
 			],
 			[
-				"rout",
-				"app\\routes.php"
-			],
-			[
 				"filter",
 				"app\\filters.php"
-			],
-			[
-				"app",
-				"app\\config\\app.php"
 			],
 			[
 				"co",
@@ -1537,18 +1509,6 @@
 			[
 				"welc",
 				"app\\views\\gg-welcome.blade.php"
-			],
-			[
-				"gg-inde",
-				"app\\views\\gg-index.blade.php"
-			],
-			[
-				"kaavyaa",
-				"kaavyaalaya\\public\\less\\kaavyaalaya.less"
-			],
-			[
-				"mai",
-				"meulib\\app\\config\\mail.php"
 			]
 		],
 		"width": 0.0
@@ -1578,8 +1538,8 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 342.0,
+	"side_bar_visible": false,
+	"side_bar_width": 218.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

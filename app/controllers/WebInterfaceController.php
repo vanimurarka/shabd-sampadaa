@@ -18,7 +18,9 @@ class WebInterfaceController extends BaseController {
 	        }, $output);
 	        $str = str_replace([":","_"], [", "," "], $str);
 	        $receivedData = json_decode($output);
-	        $synsets = $receivedData->synsets;
+	        // var_dump($receivedData);
+	        if (isset($receivedData->synsets))
+	        	$synsets = $receivedData->synsets;
 	    }
 		return View::make('home',
                    array('word' => $word,'synsets'=>$synsets))->render();
