@@ -5,6 +5,11 @@ class Synset extends Eloquent
 	protected $table = 'synsets';
 	protected $primaryKey = "synsetID";
 
+	public function words()
+    {
+        return $this->belongsToMany('Word','synset_words','synsetid','wordid');
+    }
+
 	public function Backup()
 	{
 		$deletedSynset = new DeletedSynset;
@@ -19,6 +24,7 @@ class Synset extends Eloquent
 		$wordsArray = '';
 		$synsets = Synset::whereIn('synsetID',explode(',',$ids))
 					->select('synsetID','words','sense','join_row_created')
+					->with('words')
 					->get();
 		foreach ($synsets as $synset) {
 			// var_dump($synset->join_row_created);
