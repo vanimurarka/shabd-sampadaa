@@ -25,4 +25,11 @@ class DBEnhancer extends ApiGuardController
 		$result = Word::setLanguage($words,'ur');
 		return $result;
     }
+
+    public function setEnglish()
+    {
+		$words = Input::get('words');
+		$result = Word::setLanguage($words,'en');
+		return $result;
+    }
 }

@@ -523,7 +523,7 @@
 			"file": "app/models/Synset.php",
 			"settings":
 			{
-				"buffer_size": 1151,
+				"buffer_size": 1290,
 				"line_ending": "Windows"
 			}
 		},
@@ -541,6 +541,22 @@
 			{
 				"buffer_size": 4554,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/home.blade.php",
+			"settings":
+			{
+				"buffer_size": 2803,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/login.blade.php",
+			"settings":
+			{
+				"buffer_size": 1021,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -603,7 +619,8 @@
 	[
 		"/C/vani/Dropbox/www/shabd-sampadaa",
 		"/C/vani/Dropbox/www/shabd-sampadaa/app",
-		"/C/vani/Dropbox/www/shabd-sampadaa/app/models"
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/models",
+		"/C/vani/Dropbox/www/shabd-sampadaa/app/views"
 	],
 	"file_history":
 	[
@@ -902,7 +919,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -911,15 +928,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1151,
+						"buffer_size": 1290,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								481,
-								481
+								651,
+								651
 							]
 						],
 						"settings":
@@ -928,10 +945,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 471.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -960,7 +977,7 @@
 						"translation.y": 96.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -976,8 +993,8 @@
 						"selection":
 						[
 							[
-								2916,
-								2916
+								2795,
+								2795
 							]
 						],
 						"settings":
@@ -987,14 +1004,71 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2148.0,
+						"translation.y": 2202.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
+					"file": "app/views/home.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2803,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2491,
+								2491
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2094.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/login.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1021,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								236,
+								236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "app/models/Word.php",
 					"semi_transient": false,
 					"settings":
@@ -1019,7 +1093,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1613,7 +1687,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 218.0,
 	"status_bar_visible": true,
 	"template_settings":

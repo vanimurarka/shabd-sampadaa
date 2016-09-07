@@ -17,6 +17,7 @@
 	}
 	function selectword(id)
 	{
+		// alert(id);
 		color = hexc($(id).css('background-color'));
 		if (color=="#ffffff")
 			$(id).css( "background-color", "red" );
@@ -41,8 +42,18 @@
 		words = getSelectedWords();
 		console.log(words);
 		//call api
-		$("#selected-words").val(words);
+		$("#ur-selected-words").val(words);
 		$("#set-urdu-form").submit();
+		console.log('form submitted');
+	}
+	function markEnglish()
+	{
+		//get selected words
+		words = getSelectedWords();
+		console.log(words);
+		//call api
+		$("#en-selected-words").val(words);
+		$("#set-english-form").submit();
 		console.log('form submitted');
 	}
 </script>
@@ -60,39 +71,75 @@ Word: <input name="word" type="text" value="{{$word}}">
 </form>
 
 {{$word}}<br/><br/>
+<?php $loggedIn = Auth::check(); ?>
 @if ($synsets != NULL)
-	@if (Auth::check())
-		<?php $wordid = 1 ?>
-		@foreach ($synsets as $synset)
+	<?php $wordid = 1 ?>
+	@foreach ($synsets as $synset)
+		@if (count($synset->linkedwords)>0)
+			<?php 
+				$hiwordsHTML = '';
+				$urwordsHTML = '';
+				$enwordsHTML = '';
+			?>
+			@foreach ($synset->linkedwords as $word)
+				@if ($loggedIn)
+					@if ($word->language == 'ur')
+						<?php $urwordsHTML .= "<div style='display:inline-block;min-width:100px;background-color:white' class='word' id='word".$wordid."' onclick=".'"'."selectword('#word".$wordid++ ."');".'"'.">".$word->word."</div>";
+						?>
+					@elseif ($word->language == 'en')
+						<?php $enwordsHTML .= "<div style='display:inline-block;min-width:100px;background-color:white' class='word' id='word".$wordid."' onclick=".'"'."selectword('#word".$wordid++ ."');".'"'.">".$word->word."</div>";
+						?>
+					@else
+						<?php $hiwordsHTML .= "<div style='display:inline-block;min-width:100px;background-color:white' class='word' id='word".$wordid."' onclick=".'"'."selectword('#word".$wordid++ ."');".'"'.">".$word->word."</div>";
+						?>
+					@endif
+				@else
+					@if ($word->language == 'ur')
+						<?php $urwordsHTML .= "<div style='display:inline-block;min-width:100px;background-color:white' class='word'>".$word->word."</div>";
+						?>
+					@elseif ($word->language == 'en')
+						<?php $enwordsHTML .= "<div style='display:inline-block;min-width:100px;background-color:white' class='word'>".$word->word."</div>";
+						?>
+					@else
+						<?php $hiwordsHTML .= "<div style='display:inline-block;min-width:100px;background-color:white' class='word'>".$word->word."</div>";
+						?>
+					@endif
+				@endif
+				
+			@endforeach
+			<div>{{$hiwordsHTML}}</div>
+			<div>{{$urwordsHTML}}</div>
+			<div>{{$enwordsHTML}}</div>
+		@else
 			<?php
 				$words = '';
 				$words = explode(', ', $synset->words);
 			?>
 			@foreach ($words as $synsetWord)
-				<div style="display:inline-block;min-width:100px;background-color:white" id="word{{$wordid}}" class="word" onclick="selectword('{{'#word'.$wordid++}}');">{{$synsetWord}}</div>
+				@if ($loggedIn)
+					<div style="display:inline-block;min-width:100px;background-color:white" id="word{{$wordid}}" class="word" onclick="selectword('{{'#word'.$wordid++}}');">{{$synsetWord}}</div>
+				@else
+					<div style="display:inline-block;min-width:100px;background-color:white" class="word">{{$synsetWord}}</div>
+				@endif
 			@endforeach
 			<br/>
-			{{$synset->sense}}
-			<br/><br/>
-		@endforeach
+		@endif
+		{{$synset->sense}}
+		<br/><br/>
+	@endforeach
+	@if ($loggedIn)
 		<form method="GET" action="{{route('set-urdu')}}" id="set-urdu-form">
-		<input name="words" id="selected-words" type="hidden">
+		<input name="words" id="ur-selected-words" type="hidden">
 		<input class="submit" type="button" value="Mark Selected Words as Urdu" onclick="markUrdu();">
 		</form>
-	@else
-		@foreach ($synsets as $synset)
-			<?php
-				$words = '';
-				$words = explode(', ', $synset->words);
-			?>
-			@foreach ($words as $synsetWord)
-				<div style="display:inline-block;min-width:100px;background-color:white" class="word">{{$synsetWord}}</div>
-			@endforeach
-	        <div>{{$synset->sense}}<br/><br/></div>
-	        
-	    @endforeach
-    @endif
+		<br/>
+		<form method="GET" action="{{route('set-english')}}" id="set-english-form">
+		<input name="words" id="en-selected-words" type="hidden">
+		<input class="submit" type="button" value="Mark Selected Words as English" onclick="markEnglish();">
+		</form>
+	@endif
 @endif
+
 
 </body>
 </html>

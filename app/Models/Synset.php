@@ -5,7 +5,7 @@ class Synset extends Eloquent
 	protected $table = 'synsets';
 	protected $primaryKey = "synsetID";
 
-	public function words()
+	public function linkedwords()
     {
         return $this->belongsToMany('Word','synset_words','synsetid','wordid');
     }
@@ -24,7 +24,7 @@ class Synset extends Eloquent
 		$wordsArray = '';
 		$synsets = Synset::whereIn('synsetID',explode(',',$ids))
 					->select('synsetID','words','sense','join_row_created')
-					->with('words')
+					->with('linkedwords')
 					->get();
 		foreach ($synsets as $synset) {
 			// var_dump($synset->join_row_created);

@@ -69,7 +69,7 @@ Route::get('admin/show-synset', ['as' => 'show-synset', function ()
     
 }]);
 Route::get('admin/set-urdu', ['as' => 'set-urdu', 'uses' => 'WebInterfaceController@setUrdu']);
-
+Route::get('admin/set-english', ['as' => 'set-english', 'uses' => 'WebInterfaceController@setEnglish']);
 
 Route::get('/api/word', ['as' => 'api-search', function ()
 {
@@ -104,6 +104,7 @@ Route::get('/api/word', ['as' => 'api-search', function ()
 }]);
 
 Route::get('/api/set-urdu','DBEnhancer@setUrdu');
+Route::get('/api/set-english','DBEnhancer@setEnglish');
 
 Route::get('/api/secureword', 'DBEnhancer@get');
 
