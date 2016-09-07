@@ -30,14 +30,23 @@ class Synset extends Eloquent
 			// var_dump($synset->join_row_created);
 			if ($synset->join_row_created != 1) // join row not created
 			{
+				$strSynsetid = (string) $synset->synsetID;
 				$wordsArray = explode(":", $synset->words);
-				$wordids = DB::table('words')->whereIn('word',$wordsArray)->lists('id');
-				foreach ($wordids as $wordid )
+				$wordCollection = Word::whereIn('word',$wordsArray)->get();
+				foreach ($wordCollection as $linkedword)
 				{
-					$synsetWord = new SynsetWord;
-					$synsetWord->synsetid = $synset->synsetID;
-					$synsetWord->wordid = $wordid;
-					$synsetWord->save();
+					$pos = strpos($linkedword->synsets, $strSynsetid);
+					Log::info($linkedword->synsets);
+					Log::info($strSynsetid);
+					Log::info($pos);
+					if ($pos !== false)
+					{
+						Log::info("adding join row");
+						$synsetWord = new SynsetWord;
+						$synsetWord->synsetid = $synset->synsetID;
+						$synsetWord->wordid = $linkedword->id;
+						$synsetWord->save();
+					}
 				}
 				$synset->join_row_created = 1;
 				$synset->save();
